@@ -14,18 +14,28 @@ set color(color){ //Set es un metodo de escritura
     this._color= color.toUpperCase();
 }
 
+set modelo(modelo){
+    if (modelo < 2000 ) {
+        this._modelo = 2000;
 
-mostrarEstado(){
+    }
+    else{
+        this._modelo=modelo;
+    }
+} 
+
+
+_mostrarEstado(){
     console.log(`El auto ${this._marca}  del año ${this._modelo} tiene un color ${this._color} tiene un kilometraje de ${this._kilometraje}  y se encuentra ${this._estado}` );
 }
 
 encender(){
     this._estado = "Encendido"
-    this.mostrarEstado()
+    this._mostrarEstado()
 }
 apagar(){
     this._estado = "Apagado"
-    this.mostrarEstado()
+    this._mostrarEstado()
 }
 
 avanazar(velocidad, tiempo){
@@ -35,7 +45,7 @@ avanazar(velocidad, tiempo){
     else{
         let distancia= velocidad * tiempo;
         this._kilometraje = this._kilometraje + distancia;
-       this.mostrarEstado();
+       this._mostrarEstado();
       
     }
 }
